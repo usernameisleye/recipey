@@ -1,5 +1,5 @@
+import { response } from "../utils"
 import { Application, Request, Response, NextFunction } from "express"
-import response from "../utils/response"
 
 const errors_types = [
     "CastError",
@@ -23,7 +23,10 @@ const errorware = (app: Application) => {
         else if (errors_types.includes(name)) {
             res.status(400).json(response.error(message))
         }
-        else res.status(500).json(response.error(message))
+        else {
+            res.status(500).json(response.error(message))
+        }
+        
         next()
     })
     

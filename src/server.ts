@@ -1,10 +1,8 @@
 import app from "."
 import errorware from "./middlewares/error.middleware"
 
-let port = 4090
-app.listen(port,  () => {
-    // mySQL connection
-
+let port = process.env.PORT
+app.listen(port, () => {
     console.log(
         `:::> Server is listening on ${port}`
     )

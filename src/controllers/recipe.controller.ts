@@ -1,5 +1,5 @@
+import { response } from "../utils"
 import { Request, Response } from "express"
-import response from "../utils/response"
 import RecipeService from "../services/recipe.service"
 
 class RecipeController {
